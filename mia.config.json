@@ -1,0 +1,7 @@
+{
+  "studentIdLastTwoDigits": "46",
+  "apiHost": "0.0.0.0",
+  "apiPort": 8080,
+  "webPort": 4173,
+  "apiBaseUrl": "http://ec2-3-137-155-199.us-east-2.compute.amazonaws.com:8080"
+}
