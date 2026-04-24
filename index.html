@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExtreamFS</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell-app">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">MIA 1S2026</p>
+          <h1>ExtreamFS Control Center</h1>
+          <p class="subtitle">
+            Ejecuta comandos, carga scripts `.smia` y revisa el estado del sistema de archivos
+            simulado desde una sola pantalla.
+          </p>
+        </div>
+        <div class="status-card">
+          <div>
+            <span>API</span>
+            <strong id="api-status">Desconectada</strong>
+          </div>
+          <div>
+            <span>Sesión</span>
+            <strong id="session-status">Sin sesión</strong>
+          </div>
+          <div>
+            <span>Montajes</span>
+            <strong id="mount-count">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace-grid">
+        <article class="panel command-panel">
+          <div class="panel-header">
+            <h2>Entrada de Comandos</h2>
+            <div class="panel-actions">
+              <label class="file-button">
+                Cargar script
+                <input id="file-input" type="file" accept=".smia,.txt" />
+              </label>
+              <button id="example-button" type="button">Ejemplo</button>
+              <button id="run-button" class="primary" type="button">Ejecutar</button>
+            </div>
+          </div>
+        <textarea id="command-input" spellcheck="false" placeholder="mkdisk -size=10 -path=disks/demo.mia&#10;fdisk -size=2 -path=disks/demo.mia -name=primaria&#10;mount -path=disks/demo.mia -name=primaria&#10;mkfs -id=001A"></textarea>
+        </article>
+
+        <article class="panel output-panel">
+          <div class="panel-header">
+            <h2>Salida</h2>
+            <button id="clear-output" type="button">Limpiar</button>
+          </div>
+          <pre id="command-output"></pre>
+        </article>
+      </section>
+
+      <section class="panel artifacts-panel">
+        <div class="panel-header">
+          <h2>Reportes Generados</h2>
+        </div>
+        <div id="artifacts-list" class="artifact-list">
+          <p class="empty-state">Todavía no hay reportes generados.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
