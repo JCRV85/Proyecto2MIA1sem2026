@@ -1,0 +1,9 @@
+# Flujo minimo de prueba
+mkdisk -size=10 -path=disks/demo.mia
+fdisk -size=4 -path=disks/demo.mia -name=primaria1
+mount -path=disks/demo.mia -name=primaria1
+mkfs -id=001A
+login -user=root -pass=123 -id=001A
+mkdir -p -path=/home/user/docs
+mkfile -path=/home/user/docs/readme.txt -size=32
+cat -file1=/home/user/docs/readme.txt
