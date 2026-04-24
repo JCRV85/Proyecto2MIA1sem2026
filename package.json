@@ -1,0 +1,14 @@
+{
+  "name": "mia-1s2026-p1-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "bash ./scripts/dev.sh",
+    "dev:web": "node apps/web/server.js",
+    "build:api": "bash ./scripts/build-api.sh",
+    "run:api": "bash ./scripts/run-api.sh"
+  }
+}
